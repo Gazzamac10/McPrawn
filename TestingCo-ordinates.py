@@ -9,9 +9,14 @@ a = f.readlines()
 e = open(Path2, 'r')
 b = e.readlines()
 
-for i in range(len(a)):
-    if a[i] == b[i]:
-        print ("match")
-    else:
-        print ("Unmatched")
 
+
+unmatched = []
+for i in range(len(a)):
+    if a[i] != b[i]:
+        unmatched.append("unmatched")
+
+print (len(unmatched))
+
+for i in range(len(a)):
+    print (a[i].strip(),b[i].strip())
