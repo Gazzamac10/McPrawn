@@ -35,20 +35,26 @@ def getitemlocation(list):
     for j in list:
         loc.append(j.Location)
     for k in loc:
-        Slocp.append(str((k.StartPoint.X / 1000)) + "," + str((k.StartPoint.Y / 1000)) + "," + str(
-            (k.EndPoint.X / 1000)) + "," + str((k.EndPoint.Y / 1000)))
+        Slocp.append(str((round(k.StartPoint.X / 1000,6))) + "," + str((round(k.StartPoint.Y / 1000,6))) + "," + str(
+            (round(k.EndPoint.X / 1000,6))) + "," + str((round(k.EndPoint.Y / 1000,6))))
     return Slocp
 
 
 output = getitemlocation(x)
 
+
+
+
 t = [x for y, x in sorted(zip(marks, output))]
 
 OUT = t
 
-"""Path = "H:\Scripting\McPrawn Development\Data\outfromRevit.txt"
+Path = "H:\Scripting\McPrawn Development\Data\outfromRevit.txt"
 
-f = open(Path,"w") #opens file with name of "test.txt"
-for item in OUT:
-    f.write("%s\n" % item)
-f.close()"""
+Activate = IN[1]
+
+if Activate == True:
+	f = open(Path,"w") #opens file with name of "test.txt"
+	for item in OUT:
+	    f.write("%s\n" % item)
+	f.close()

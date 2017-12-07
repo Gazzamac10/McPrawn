@@ -8,13 +8,20 @@ from Grasshopper import DataTree
 import os
 import os.path
 
-a = [str(rs.coerce3dpoint(x[i]).X)+","+str(rs.coerce3dpoint(x[i]).Y)+","+\
-str(rs.coerce3dpoint(y[i]).X)+","+str(rs.coerce3dpoint(y[i]).Y)for i in range(len(x))]
 
+def getcofromline(string):
+    output = []
+    for item in string:
+        output.append(str(round(float(item.split(",")[2]),6))+","+str(round(float(item.split(",")[3]),6))\
+        +","+str(round(float(item.split(",")[5]),6))+","+str(round(float(item.split(",")[6]),6)))
+    return output
+
+a = getcofromline(x)
 
 Path = "H:\Scripting\McPrawn Development\Data\outfromGH.txt"
 
-f = open(Path,"w") #opens file with name of "test.txt"
-for item in a:
-    f.write("%s\n" % item)
-f.close()
+if Activate == True:
+    f = open(Path,"w") #opens file with name of "test.txt"
+    for item in a:
+        f.write("%s\n" % item)
+    f.close()
