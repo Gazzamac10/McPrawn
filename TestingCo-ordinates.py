@@ -10,6 +10,9 @@ e = open(Path2, 'r')
 b = e.readlines()
 
 
+a = [item.strip() for item in a]
+b = [item.strip() for item in b]
+
 
 unmatched = []
 for i in range(len(a)):
@@ -18,5 +21,3 @@ for i in range(len(a)):
 
 print (len(unmatched))
 
-for i in range(len(a)):
-    print (a[i].strip(),b[i].strip())
