@@ -9,11 +9,17 @@ import os
 import os.path
 
 
+roundingnumber = 6
+
 def getcofromline(string):
     output = []
     for item in string:
-        output.append(str(round(float(item.split(",")[2]),6))+","+str(round(float(item.split(",")[3]),6))\
-        +","+str(round(float(item.split(",")[5]),6))+","+str(round(float(item.split(",")[6]),6)))
+        if "line" in item:
+            output.append(str(round(float(item.split(",")[2]),roundingnumber))+","+str(round(float(item.split(",")[3]),roundingnumber))\
+            +","+str(round(float(item.split(",")[5]),roundingnumber))+","+str(round(float(item.split(",")[6]),roundingnumber)))
+        else:
+            output.append(str(round(float(item.split(",")[2]),roundingnumber))+","+str(round(float(item.split(",")[3]),roundingnumber))\
+            +","+str(round(float(item.split(",")[8]),roundingnumber))+","+str(round(float(item.split(",")[9]),roundingnumber)))
     return output
 
 a = getcofromline(x)
