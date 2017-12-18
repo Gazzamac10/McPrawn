@@ -9,7 +9,6 @@ a = f.readlines()
 e = open(Path2, 'r')
 b = e.readlines()
 
-
 a = [item.strip() for item in a]
 b = [item.strip() for item in b]
 
