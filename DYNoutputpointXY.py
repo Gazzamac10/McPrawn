@@ -43,8 +43,6 @@ def getitemlocation(list):
 output = getitemlocation(x)
 
 
-
-
 t = [x for y, x in sorted(zip(marks, output))]
 
 OUT = t
@@ -58,3 +56,5 @@ if Activate == True:
 	for item in OUT:
 	    f.write("%s\n" % item)
 	f.close()
+
+
