@@ -197,6 +197,15 @@ except:
 
     errorReport = traceback.format_exc()
 
+TransactionManager.Instance.EnsureInTransaction(doc)
+
+for e in UnwrapElement(revitbeams):
+    Autodesk.Revit.DB.Structure.StructuralFramingUtils.DisallowJoinAtEnd(e, 0)
+    Autodesk.Revit.DB.Structure.StructuralFramingUtils.DisallowJoinAtEnd(e, 1)
+
+# End Transaction
+TransactionManager.Instance.TransactionTaskDone()
+
 
 def getparametersfromlist(list):
     for i in range(len(list)):
